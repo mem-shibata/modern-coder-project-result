@@ -1,0 +1,91 @@
+<header class="header">
+  <div class="header__nav">
+    <div class="u-content-wrapper header__nav__wrapper">
+      <div class="header__nav__logo">Shiro</div>
+      <div class="hamburger-menu">
+        <span class="hamburger-menu__line"></span>
+        <span class="hamburger-menu__line--dummy"></span>
+      </div>
+    </div>
+    <ul class="header-menu">
+      <li class="header__menu__item"><a href="#">Concept</a></li>
+      <li class="header__menu__item"><a href="#">Work</a></li>
+      <li class="header__menu__item"><a href="#">Florist</a></li>
+      <li class="header__menu__item"><a href="#">Shop information</a></li>
+      <li class="header__menu__item"><a href="#">Contact us</a></li>
+    </ul>
+  </div>
+  <div class="u-content-wrapper">
+    <h1 class="header__title">Shiro</h1>
+    <p class="header__title__sub">White flower shop</p>
+  </div>
+</header>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const spBreakPoint = 670;
+    let headerTop = 40;
+    let headerHeight = 0;
+
+    // ウィンドウ幅による初期設定
+    if (window.innerWidth > spBreakPoint) {
+      headerHeight = 620;
+    } else {
+      headerHeight = 355;
+    }
+
+    // スクロールイベントの処理
+    window.addEventListener('scroll', function () {
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      const headerNav = document.querySelector('.header__nav');
+
+      if (headerNav) {
+        // PC表示時のヘッダー位置変更
+        if (window.innerWidth > spBreakPoint) {
+          if (scrollTop > headerTop) {
+            headerNav.classList.add('position-change');
+          } else {
+            headerNav.classList.remove('position-change');
+          }
+        }
+
+        // ヘッダーの色変更
+        if (scrollTop > headerHeight) {
+          headerNav.classList.add('color-chnage');
+        } else {
+          headerNav.classList.remove('color-chnage');
+        }
+      }
+
+      // work セクションの矢印表示
+      const workDesc = document.querySelector('#work__desc');
+      const workElement = document.querySelector('.work');
+      if (workDesc && workElement) {
+        const workDescTop = workDesc.getBoundingClientRect().top + scrollTop;
+        if (scrollTop > workDescTop - 50) {
+          workElement.classList.add('arrow_display');
+        }
+      }
+    });
+
+    /*** ハンバーガーメニューの表示/非表示 ***/
+    const hamburgerMenu = document.querySelector('.hamburger-menu');
+    const headerMenu = document.querySelector('.header-menu');
+
+    if (hamburgerMenu && headerMenu) {
+      hamburgerMenu.addEventListener('click', function () {
+        hamburgerMenu.classList.toggle('active');
+        headerMenu.classList.toggle('height-change');
+      });
+
+      // メニューアイテムのクリック処理
+      const menuItems = document.querySelectorAll('.header__menu__item');
+      menuItems.forEach(function (item) {
+        item.addEventListener('click', function () {
+          hamburgerMenu.classList.remove('active');
+          headerMenu.classList.toggle('height-change');
+        });
+      });
+    }
+  });
+</script>

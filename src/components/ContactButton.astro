@@ -1,0 +1,10 @@
+---
+interface Props {
+  text: string;
+  link?: string;
+}
+
+const { text, link } = Astro.props;
+---
+
+<a class="btn__contact" href={link}>{text}</a>

@@ -1,0 +1,137 @@
+---
+import '@/styles/style.css';
+
+import Header from '@/components/Header.astro';
+import Footer from '@/components/Footer.astro';
+import SectionTitle from '@/components/SectionTitle.astro';
+import ContactButton from '@/components/ContactButton.astro';
+import CardList from '@/components/CardList.astro';
+import Card from '@/components/Card.astro';
+import StaggeredCard from '@/components/StaggeredCard.astro';
+import StaggeredCards from '@/components/StaggeredCards.astro';
+import Table from '@/components/Table.astro';
+---
+
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>shiro</title>
+  </head>
+  <body>
+    <Header />
+    <section class="concept">
+      <div class="u-content-wrapper">
+        <SectionTitle title="Concept" />
+        <p class="u-text">
+          私たちShiroは、白いお花だけを取り扱うフラワーショップです。<br
+            class="u-display__pc"
+          />色とりどりの花束も素敵だけれど、洗練された「白」の美しさを感じてほしい。<br
+            class="u-display__pc"
+          />「白」に対する愛から生まれた静寂な時間が流れる店へ、ぜひお越しください。
+        </p>
+        <img class="concept__image" src="/images/concept.jpg" />
+      </div>
+    </section>
+    <section class="work">
+      <div class="u-content-wrapper">
+        <SectionTitle title="Work" />
+        <p id="work__desc" class="u-text">
+          オーダーメイドでのブーケ・アレンジメントのデザインのほか、<br
+            class="u-display__pc"
+          />ウェディングやイベントの装花なども行なっています。<br
+            class="u-display__pc"
+          />一人一人にあったご提案をさせていただきます。
+        </p>
+        <StaggeredCards>
+          <StaggeredCard
+            image="/images/work_gift.jpg"
+            title="Gift"
+            description="花束をお送りしたいお相手、伝えたいお気持ちに合わせたプレゼント用花束のアレンジメントをさせていただきます。花言葉などの豆知識もお伝えします。"
+          />
+          <StaggeredCard
+            image="/images/work_decoretion.jpg"
+            title="Decoration"
+            description="お写真を彩るお花を一輪から販売。一定期間のご契約で定期的にご自宅へ配送させていただくことも可能です。"
+          />
+          <StaggeredCard
+            image="/images/work_wedding.jpg"
+            title="Wedding"
+            description="ウエディングドレスに合わせたブーケや式場の雰囲気に合う装花をご提案。お打ち合わせの流れや回数、費用などにつきましてはお問い合わせください。"
+          />
+          <StaggeredCard
+            image="/images/work_for_yourself.jpg"
+            title="For yourself"
+            description="お部屋の雰囲気やライフスタイルをお聞きしてご自宅用の花束をご提案し、少しでも長く咲かせるコツもお教えします。花束に合った花瓶をご提案することも可能です。"
+          />
+        </StaggeredCards>
+      </div>
+    </section>
+    <section class="florist">
+      <div class="u-content-wrapper">
+        <SectionTitle title="Florist" />
+        <p class="u-text">
+          Shiro専属のフローリストたちをご紹介。<br
+            class="u-display__pc"
+          />得意の分野であなたのオーダーを最大限に叶えます。
+        </p>
+        <CardList>
+          <Card
+            name="Shiyu"
+            image="/images/florist_shiyu.jpg"
+            introduce="お花茶屋大学フラワーアレンジメント科を卒業後、さまざまな白い花を探すために世界を一周し、Shiroの創業者となる。"
+          />
+          <Card
+            name="Mao"
+            image="/images/florist_mao.jpg"
+            introduce="花の魅力に惹かれ、空間デザインの世界からフローリストの道を歩む。主に結婚式やイベントで使用するお花のディレクション担当。"
+          />
+          <Card
+            name="Omichan"
+            image="/images/florist_omichan.jpg"
+            introduce="フローリスト兼ガーデナーという特殊な経歴をもつ。豊富な知識と技術でお客様のオーダーを叶える。"
+          />
+        </CardList>
+      </div>
+    </section>
+    <section class="shopInformation">
+      <div class="u-content-wrapper">
+        <SectionTitle title="Shop information" />
+        <p class="u-text">Shiroの店舗情報をご紹介します。</p>
+        <div class="shopInformation__contents">
+          <img class="shopInformation__image" src="/images/shop_information.jpg" alt="白い花の写真" />
+          <Table>
+            <tr>
+              <th>住所</th>
+              <td>〒810-0001<br />福岡県福岡市中央区天神0-0-0</td>
+            </tr>
+            <tr>
+              <th>電話番号</th>
+              <td>0120-000-000</td>
+            </tr>
+            <tr>
+              <th>営業時間</th>
+              <td>11:00-20:30<br />（定休日：水曜日）</td>
+            </tr>
+            <tr>
+              <th>アクセス</th>
+              <td>天神駅12a出口から徒歩6分<br />東京駅8b出口から徒歩12分</td>
+            </tr>
+          </Table>
+        </div>
+      </div>
+    </section>
+    <section class="contactUs">
+      <div class="u-content-wrapper">
+        <SectionTitle title="Contact us" />
+        <p class="u-text">
+          イベントや結婚式でご利用する装花のご相談や、<br
+          />フラワーアレンジメントのご予約などはこちらからお問い合わせください。
+        </p>
+        <ContactButton text="お問い合わせ" link="#" />
+      </div>
+    </section>
+    <Footer />
+  </body>
+</html>

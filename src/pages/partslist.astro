@@ -1,0 +1,419 @@
+---
+import '@/styles/style.css';
+
+import Card from '@/components/Card.astro';
+import CardList from '@/components/CardList.astro';
+import ContactButton from '@/components/ContactButton.astro';
+import Footer from '@/components/Footer.astro';
+import Header from '@/components/Header.astro';
+import SectionTitle from '@/components/SectionTitle.astro';
+import StaggeredCard from '@/components/StaggeredCard.astro';
+import StaggeredCards from '@/components/StaggeredCards.astro';
+import Table from '@/components/Table.astro';
+---
+
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>パーツリスト - Shiro Components</title>
+    <link rel="stylesheet" href="../styles/style.css" />
+    <link rel="stylesheet" href="https://use.typekit.net/xpw1yxk.css" />
+  </head>
+  <body>
+    <div class="parts-list">
+      <header class="parts-list__header">
+        <h1>🎨 Shiro パーツリスト</h1>
+        <p>プロジェクトで使用できるコンポーネント一覧</p>
+      </header>
+
+      <main class="parts-list__main">
+        <!-- Card Component -->
+        <section class="part">
+          <h2 class="part__title">📇 Card</h2>
+          <div class="part__description">
+            <p><strong>用途:</strong> フローリスト情報表示用のカードコンポーネント</p>
+            <p><strong>Props:</strong> name (string), image (string), introduce (string)</p>
+          </div>
+          <div class="part__demo">
+            <Card
+              name="テストフローリスト"
+              image="/images/florist_shiyu.jpg"
+              introduce="テスト用のフローリスト紹介文です。コンポーネントの動作確認用のサンプルテキストとなります。"
+            />
+          </div>
+          <div class="part__code">
+            <pre><code>&lt;Card 
+  name="フローリスト名" 
+  image="/images/florist.jpg" 
+  introduce="紹介文"
+/&gt;</code></pre>
+          </div>
+        </section>
+
+        <!-- ContactButton Component -->
+        <section class="part">
+          <h2 class="part__title">🔗 ContactButton</h2>
+          <div class="part__description">
+            <p><strong>用途:</strong> お問い合わせボタン</p>
+            <p><strong>Props:</strong> text (string), link? (string)</p>
+          </div>
+          <div class="part__demo">
+            <ContactButton text="お問い合わせ" link="#contact" />
+          </div>
+          <div class="part__code">
+            <pre><code>&lt;ContactButton 
+  text="ボタンテキスト" 
+  link="/contact"
+/&gt;</code></pre>
+          </div>
+        </section>
+
+        <!-- SectionTitle Component -->
+        <section class="part">
+          <h2 class="part__title">📝 SectionTitle</h2>
+          <div class="part__description">
+            <p><strong>用途:</strong> セクションタイトル（下線付き）</p>
+            <p><strong>Props:</strong> title (string)</p>
+          </div>
+          <div class="part__demo">
+            <SectionTitle title="サンプルタイトル" />
+          </div>
+          <div class="part__code">
+            <pre><code>&lt;SectionTitle title="タイトル名" /&gt;</code></pre>
+          </div>
+        </section>
+
+        <!-- StaggeredCard Component -->
+        <section class="part">
+          <h2 class="part__title">🎴 StaggeredCard</h2>
+          <div class="part__description">
+            <p><strong>用途:</strong> Work セクション用のカードコンポーネント</p>
+            <p><strong>Props:</strong> image (string), title (string), description (string)</p>
+          </div>
+          <div class="part__demo">
+            <StaggeredCard
+              image="/images/work_gift.jpg"
+              title="Gift"
+              description="花束をお送りしたいお相手、伝えたいお気持ちに合わせたプレゼント用花束のアレンジメントをさせていただきます。"
+            />
+          </div>
+          <div class="part__code">
+            <pre><code>&lt;StaggeredCard 
+  image="/images/sample.jpg" 
+  title="カードタイトル" 
+  description="カードの説明文"
+/&gt;</code></pre>
+          </div>
+        </section>
+
+        <!-- Table Component -->
+        <section class="part">
+          <h2 class="part__title">📊 Table</h2>
+          <div class="part__description">
+            <p><strong>用途:</strong> 店舗情報などのテーブル表示</p>
+            <p><strong>Props:</strong> なし（スロットを使用）</p>
+          </div>
+          <div class="part__demo">
+            <Table>
+              <tr>
+                <th class="shopInformation__table__heading">住所</th>
+                <td>〒810-0001<br />福岡県福岡市中央区天神0-0-0</td>
+              </tr>
+              <tr>
+                <th class="shopInformation__table__heading">電話番号</th>
+                <td>0120-000-000</td>
+              </tr>
+            </Table>
+          </div>
+          <div class="part__code">
+            <pre><code>&lt;Table&gt;
+  &lt;tr&gt;
+    &lt;th class="shopInformation__table__heading"&gt;項目&lt;/th&gt;
+    &lt;td&gt;内容&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/Table&gt;</code></pre>
+          </div>
+        </section>
+
+        <!-- CardList Component -->
+        <section class="part">
+          <h2 class="part__title">📋 CardList</h2>
+          <div class="part__description">
+            <p><strong>用途:</strong> フローリストカードのコンテナ（グリッドレイアウト）</p>
+            <p><strong>Props:</strong> なし（スロットを使用）</p>
+          </div>
+          <div class="part__demo">
+            <CardList>
+              <Card
+                name="Shiyu"
+                image="/images/florist_shiyu.jpg"
+                introduce="お花茶屋大学フラワーアレンジメント科を卒業後、さまざまな白い花を探すために世界を一周し、Shiroの創業者となる。"
+              />
+              <Card
+                name="Mao"
+                image="/images/florist_mao.jpg"
+                introduce="花の魅力に惹かれ、空間デザインの世界からフローリストの道を歩む。主に結婚式やイベントで使用するお花のディレクション担当。"
+              />
+            </CardList>
+          </div>
+          <div class="part__code">
+            <pre><code>&lt;CardList&gt;
+  &lt;Card name="..." image="..." introduce="..." /&gt;
+  &lt;Card name="..." image="..." introduce="..." /&gt;
+&lt;/CardList&gt;</code></pre>
+          </div>
+        </section>
+
+        <!-- StaggeredCards Component -->
+        <section class="part">
+          <h2 class="part__title">🎯 StaggeredCards</h2>
+          <div class="part__description">
+            <p><strong>用途:</strong> Workカードのコンテナ（互い違いレイアウト）</p>
+            <p><strong>Props:</strong> なし（スロットを使用）</p>
+          </div>
+          <div class="part__demo">
+            <StaggeredCards>
+              <StaggeredCard
+                image="/images/work_gift.jpg"
+                title="Gift"
+                description="花束をお送りしたいお相手、伝えたいお気持ちに合わせたプレゼント用花束のアレンジメントをさせていただきます。"
+              />
+              <StaggeredCard
+                image="/images/work_decoretion.jpg"
+                title="Decoration"
+                description="お写真を彩るお花を一輪から販売。一定期間のご契約で定期的にご自宅へ配送させていただくことも可能です。"
+              />
+            </StaggeredCards>
+          </div>
+          <div class="part__code">
+            <pre><code>&lt;StaggeredCards&gt;
+  &lt;StaggeredCard image="..." title="..." description="..." /&gt;
+  &lt;StaggeredCard image="..." title="..." description="..." /&gt;
+&lt;/StaggeredCards&gt;</code></pre>
+          </div>
+        </section>
+
+        <!-- Header Component -->
+        <section class="part">
+          <h2 class="part__title">🔝 Header</h2>
+          <div class="part__description">
+            <p><strong>用途:</strong> サイトヘッダー（ナビゲーション、ハンバーガーメニュー付き）</p>
+            <p><strong>Props:</strong> なし</p>
+          </div>
+          <div class="part__demo">
+            <div class="demo-note">
+              ⚠️
+              Headerコンポーネントは固定位置やJavaScriptを含むため、このページでは表示を省略します
+            </div>
+          </div>
+          <div class="part__code">
+            <pre><code>&lt;Header /&gt;</code></pre>
+          </div>
+        </section>
+
+        <!-- Footer Component -->
+        <section class="part">
+          <h2 class="part__title">🔚 Footer</h2>
+          <div class="part__description">
+            <p><strong>用途:</strong> サイトフッター（コピーライト表示）</p>
+            <p><strong>Props:</strong> なし</p>
+          </div>
+          <div class="part__demo">
+            <Footer />
+          </div>
+          <div class="part__code">
+            <pre><code>&lt;Footer /&gt;</code></pre>
+          </div>
+        </section>
+      </main>
+
+      <nav class="parts-list__nav">
+        <a href="/">← メインサイトに戻る</a>
+      </nav>
+    </div>
+  </body>
+</html>
+
+<style>
+  .parts-list {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    font-family: poppins, sans-serif;
+    background: #fff;
+  }
+
+  .parts-list__header {
+    text-align: center;
+    padding: 2rem 0 3rem;
+    border-bottom: 2px solid #ededed;
+    margin-bottom: 3rem;
+  }
+
+  .parts-list__header h1 {
+    font-size: 2.5rem;
+    color: #2b2b2b;
+    margin-bottom: 0.5rem;
+  }
+
+  .parts-list__header p {
+    color: #666;
+    font-size: 1.1rem;
+  }
+
+  .parts-list__main {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .part {
+    background: #f9f9f9;
+    border-radius: 8px;
+    padding: 2rem;
+    border: 1px solid #e0e0e0;
+  }
+
+  .part__title {
+    font-size: 1.8rem;
+    color: #2b2b2b;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #007bff;
+  }
+
+  .part__description {
+    margin-bottom: 1.5rem;
+    background: #fff;
+    padding: 1rem;
+    border-radius: 4px;
+    border-left: 4px solid #007bff;
+  }
+
+  .part__description p {
+    margin: 0.5rem 0;
+    color: #444;
+  }
+
+  .part__description strong {
+    color: #2b2b2b;
+  }
+
+  .part__demo {
+    margin-bottom: 1.5rem;
+    padding: 1.5rem;
+    background: #fff;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    min-height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .demo-note {
+    color: #666;
+    font-style: italic;
+    text-align: center;
+    background: #f0f0f0;
+    padding: 1rem;
+    border-radius: 4px;
+    border: 1px dashed #ccc;
+  }
+
+  .part__code {
+    background: #282c34;
+    border-radius: 4px;
+    overflow-x: auto;
+  }
+
+  .part__code pre {
+    margin: 0;
+    padding: 1.5rem;
+  }
+
+  .part__code code {
+    color: #abb2bf;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  .parts-list__nav {
+    text-align: center;
+    padding-top: 3rem;
+    margin-top: 3rem;
+    border-top: 2px solid #ededed;
+  }
+
+  .parts-list__nav a {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+
+  .parts-list__nav a:hover {
+    background: #0056b3;
+  }
+
+  /* レスポンシブ対応 */
+  @media (max-width: 768px) {
+    .parts-list {
+      padding: 1rem;
+    }
+
+    .parts-list__header h1 {
+      font-size: 2rem;
+    }
+
+    .part {
+      padding: 1.5rem;
+    }
+
+    .part__title {
+      font-size: 1.5rem;
+    }
+
+    .part__demo {
+      padding: 1rem;
+    }
+
+    .part__code pre {
+      padding: 1rem;
+    }
+
+    .part__code code {
+      font-size: 0.8rem;
+    }
+  }
+
+  /* デモエリア内のコンポーネント調整 */
+  .part__demo .florist__person {
+    max-width: 250px;
+  }
+
+  .part__demo .work__content {
+    max-width: 300px;
+  }
+
+  .part__demo .florist__persons {
+    gap: 1rem;
+  }
+
+  .part__demo .work__contents {
+    height: auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .part__demo .work__content:nth-of-type(2) {
+    margin-top: 0;
+  }
+</style>

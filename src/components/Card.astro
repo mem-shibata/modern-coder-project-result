@@ -1,0 +1,15 @@
+---
+interface Props {
+  name: string;
+  image: string;
+  introduce: string;
+}
+
+const { name, image, introduce } = Astro.props;
+---
+
+<div class="florist__person">
+  <img class="florist__person__image" src={image} alt={name} />
+  <h3 class="florist__person__name">{name}</h3>
+  <p class="florist__person__introduce">{introduce}</p>
+</div>
