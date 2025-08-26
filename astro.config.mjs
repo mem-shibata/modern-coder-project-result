@@ -2,6 +2,6 @@ import { defineConfig } from 'astro/config';
 
 export default defineConfig({
   site: 'https://mem-shibata.github.io',
-  base: 'shiro',
+  base: '/shiro/',
   output: 'static',
 });
