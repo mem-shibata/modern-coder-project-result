@@ -41,10 +41,10 @@
     "*.{js,mjs,ts,tsx,astro,css,md,json}": [
       "npm run format"
     ],
-    "*.{astro}": [
+    "src/**/*.astro": [
       "npm run lint:astro"
     ],
-    "*.{css,scss}": [
+    "src/styles/**/*.{css,scss}": [
       "npm run lint:css"
     ]
   }
