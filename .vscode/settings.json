@@ -15,13 +15,13 @@
   "[scss]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.codeActionsOnSave": {
-      "source.fixAll.stylelint": "explicit"
+      "source.fixAll.stylelint": true
     }
   },
   "[css]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.codeActionsOnSave": {
-      "source.fixAll.stylelint": "explicit"
+      "source.fixAll.stylelint": true
     }
   },
   "css.validate": false,
