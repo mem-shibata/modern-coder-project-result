@@ -10,7 +10,9 @@
     "preview": "astro preview",
     "format": "prettier --write .",
     "format:dist": "prettier --write \"./dist/**/*.{html,js,json}\" --no-error-on-unmatched-pattern --ignore-path .prettierignore",
-    "lint": "markuplint \"src/**/*.astro\" && stylelint --fix \"src/styles/**/*.{css,scss}\"",
+    "lint": "npm run lint:astro && npm run lint:css",
+    "lint:astro": "markuplint \"src/**/*.astro\"",
+    "lint:css": "stylelint --fix \"src/styles/**/*.{css,scss}\"",
     "prepare": "husky",
     "sass:build": "sass src/styles:dist/styles --no-source-map",
     "sass:watch": "sass --watch src/styles:public/styles --no-source-map"
@@ -37,8 +39,13 @@
   },
   "lint-staged": {
     "*.{js,mjs,ts,tsx,astro,css,md,json}": [
-      "npm run format",
-      "npm run lint"
+      "npm run format"
+    ],
+    "*.{astro}": [
+      "npm run lint:astro"
+    ],
+    "*.{css,scss}": [
+      "npm run lint:css"
     ]
   }
 }
