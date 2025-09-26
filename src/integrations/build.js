@@ -9,7 +9,7 @@ export const astroBuild = () => {
   return {
     name: 'astro-build',
     hooks: {
-      'astro:config:setup': async ({ config, logger }) => {
+      'astro:config:setup': async ({ config }) => {
         projectRootPath = fileURLToPath(config.root);
       },
 

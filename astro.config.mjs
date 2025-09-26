@@ -15,6 +15,5 @@ export default defineConfig({
     css: {
       postcss: false, // PostCSSを使用しない
     },
-    // plugins: [process.env.NODE_ENV === 'development' ? astroDev() : undefined],
   },
 });

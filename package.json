@@ -9,7 +9,7 @@
     "build": "astro build && npm run sass:build && npm run format:dist",
     "preview": "astro preview",
     "format": "prettier --write .",
-    "format:dist": "prettier --write \"./dist/**/*.{html,js,json}\" --no-error-on-unmatched-pattern --ignore-path .prettierignore",
+    "format:dist": "prettier --write \"./dist/**/*.{html,mjs,js,json}\" --no-error-on-unmatched-pattern --ignore-path .prettierignore",
     "lint": "npm run lint:astro && npm run lint:css",
     "lint:astro": "markuplint \"src/**/*.astro\"",
     "lint:css": "stylelint --fix \"src/styles/**/*.{css,scss}\"",
