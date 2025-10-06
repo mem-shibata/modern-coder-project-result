@@ -1,16 +1,19 @@
 import { defineConfig } from 'astro/config';
+import { astroBuild } from './src/integrations/build';
+import { astroDev } from './src/integrations/dev';
 
 export default defineConfig({
   site: 'https://mem-shibata.github.io',
-  base: './',
+  base: '/',
   output: 'static',
+  integrations: [astroBuild(), astroDev()],
   vite: {
     build: {
-      cssMinify: false,
-      minify: false,
+      cssMinify: false, // CSSを圧縮しない
+      minify: false, // HTMLを圧縮しない
     },
     css: {
-      postcss: false,
+      postcss: false, // PostCSSを使用しない
     },
   },
 });

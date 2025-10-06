@@ -1,11 +1,8 @@
 ---
-import '@/styles/style.css';
-
 import Card from '@/components/Card.astro';
 import CardList from '@/components/CardList.astro';
 import ContactButton from '@/components/ContactButton.astro';
 import Footer from '@/components/Footer.astro';
-import Header from '@/components/Header.astro';
 import SectionTitle from '@/components/SectionTitle.astro';
 import StaggeredCard from '@/components/StaggeredCard.astro';
 import StaggeredCards from '@/components/StaggeredCards.astro';
@@ -18,7 +15,8 @@ import Table from '@/components/Table.astro';
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>パーツリスト - Shiro Components</title>
-    <link rel="stylesheet" href="../styles/style.css" />
+    <link rel="stylesheet" href="/styles/reset.css" />
+    <link rel="stylesheet" href="/styles/style.css" />
     <link rel="stylesheet" href="https://use.typekit.net/xpw1yxk.css" />
   </head>
   <body>
@@ -44,9 +42,9 @@ import Table from '@/components/Table.astro';
             />
           </div>
           <div class="part__code">
-            <pre><code>&lt;Card 
-  name="フローリスト名" 
-  image="/images/florist.jpg" 
+            <pre><code>&lt;Card
+  name="フローリスト名"
+  image="/images/florist.jpg"
   introduce="紹介文"
 /&gt;</code></pre>
           </div>
