@@ -1,8 +1,0 @@
-{
-  "recommendations": [
-    "esbenp.prettier-vscode",
-    "stylelint.vscode-stylelint",
-    "astro-build.astro-vscode",
-    "yusukehirao.vscode-markuplint"
-  ]
-}
