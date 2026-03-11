@@ -1,6 +1,0 @@
-{
-  "extends": ["stylelint-config-recess-order"],
-  "rules": {
-    "no-duplicate-selectors": true
-  }
-}
