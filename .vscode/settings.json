@@ -15,20 +15,19 @@
   "[scss]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.codeActionsOnSave": {
-      "source.fixAll.stylelint": true
+      "source.fixAll.stylelint": "explicit"
     }
   },
   "[css]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.codeActionsOnSave": {
-      "source.fixAll.stylelint": true
+      "source.fixAll.stylelint": "explicit"
     }
   },
   "css.validate": false,
   "scss.validate": false,
-  "stylelint.configFile": "./.stylelintrc",
+  "stylelint.configFile": "stylelint.config.mjs",
   "stylelint.validate": ["css", "scss"],
-  "markuplint.enable": true,
   "editor.formatOnSave": true,
   "editor.codeActionsOnSave": {
     "source.fixAll": "explicit"
