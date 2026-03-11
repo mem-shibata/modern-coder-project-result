@@ -59,7 +59,7 @@
   z-index: 100;
 }
 
-.color-chnage {
+.color-change {
   color: #2b2b2b;
   background: #fff;
   border-bottom: 1px solid #a0a0a0;
@@ -95,9 +95,9 @@
   background: #fff;
 }
 
-.color-chnage span,
-.color-chnage span::before,
-.color-chnage span::after {
+.color-change span,
+.color-change span::before,
+.color-change span::after {
   background: #2b2b2b;
 }
 
